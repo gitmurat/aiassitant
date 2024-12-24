@@ -1,30 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./page.module.css";
+import Chat from "./components/chat";
+// import WeatherWidget from "./components/weather-widget";
+import { getWeather } from "./utils/weather";
+import FileViewer from "./components/file-viewer";
 
-const Home = () => {
-  const categories = {
-    "Basic chat": "basic-chat",
-    "Function calling": "function-calling",
-    "File search": "file-search",
-    All: "all",
-  };
+const FunctionCalling = () => {
+	const [weatherData, setWeatherData] = useState({});
 
-  return (
-    <main className={styles.main}>
-      <div className={styles.title}>
-        Explore sample apps built with Assistants API
-      </div>
-      <div className={styles.container}>
-        {Object.entries(categories).map(([name, url]) => (
-          <a key={name} className={styles.category} href={`/examples/${url}`}>
-            {name}
-          </a>
-        ))}
-      </div>
-    </main>
-  );
+	const functionCallHandler = async (call) => {
+		if (call?.function?.name !== "get_weather") return;
+		const args = JSON.parse(call.function.arguments);
+		const data = getWeather(args.location);
+		setWeatherData(data);
+		return JSON.stringify(data);
+	};
+
+
+	return (
+		<main className={styles.main}>
+			<div className={styles.container}>
+				<div className={styles.column}>
+					{/* <WeatherWidget {...weatherData} /> */}
+					<FileViewer />
+				</div>
+				<div className={styles.chatContainer}>
+					<div className={styles.chat}>
+						<Chat functionCallHandler={functionCallHandler} />
+					</div>
+				</div>
+			</div>
+		</main>
+	);
 };
 
-export default Home;
+export default FunctionCalling;
