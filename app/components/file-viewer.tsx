@@ -17,7 +17,7 @@ const TrashIcon = () => (
 		/>
 	</svg>
 );
-
+const baseUrl = "http://localhost:5000";
 const FileViewer = () => {
 	const [files, setFiles] = useState([]);
 
@@ -30,17 +30,24 @@ const FileViewer = () => {
 	}, []);
 
 	const fetchFiles = async () => {
-		const resp = await fetch("/api/assistants/files", {
+		const resp = await fetch(baseUrl + "/api/assistants/files", {
 			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
 		});
 		const data = await resp.json();
+		console.log(data)
 		setFiles(data);
 	};
 
 	const handleFileDelete = async (fileId) => {
-		await fetch("/api/assistants/files", {
+		await fetch(baseUrl + "/api/assistants/files", {
 			method: "DELETE",
 			body: JSON.stringify({ fileId }),
+			headers: {
+				"Content-Type": "application/json",
+			},
 		});
 	};
 
