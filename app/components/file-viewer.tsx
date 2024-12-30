@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./file-viewer.module.css";
-
+import { baseUrl } from "../assistant-config";
 const TrashIcon = () => (
 	<svg
 		className={styles.fileDeleteIcon}
@@ -17,7 +17,7 @@ const TrashIcon = () => (
 		/>
 	</svg>
 );
-const baseUrl = "http://localhost:5000";
+
 const FileViewer = () => {
 	const [files, setFiles] = useState([]);
 
@@ -62,7 +62,7 @@ const FileViewer = () => {
 		// append existing file ids to the request
 		const fileIds = files.map((file) => file.file_id);
 		data.append("fileIds", JSON.stringify(fileIds));
-		await fetch("/api/assistants/files", {
+		await fetch(baseUrl + "/api/assistants/files", {
 			method: "POST",
 			body: data,
 		});
