@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import Chat from "./components/chat";
 // import WeatherWidget from "./components/weather-widget";
 import { getWeather } from "./utils/weather";
+import SharepointFileViewer from "./components/sharepoint-file-viewer";
 import FileViewer from "./components/file-viewer";
-
 const FunctionCalling = () => {
 	const [weatherData, setWeatherData] = useState({});
 
@@ -24,6 +24,7 @@ const FunctionCalling = () => {
 			<div className={styles.container}>
 				<div className={styles.column}>
 					{/* <WeatherWidget {...weatherData} /> */}
+					<SharepointFileViewer />
 					<FileViewer />
 				</div>
 				<div className={styles.chatContainer}>

@@ -37,7 +37,6 @@ const FileViewer = () => {
 			},
 		});
 		const data = await resp.json();
-		console.log(data)
 		setFiles(data);
 	};
 
