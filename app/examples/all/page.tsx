@@ -7,6 +7,7 @@ import WeatherWidget from "../../components/weather-widget";
 import { getWeather } from "../../utils/weather";
 import { fetchOpportunities } from "../../utils/opportunities";
 import FileViewer from "../../components/file-viewer";
+import CompanyWidget from "@/app/components/company-widget";
 
 const FunctionCalling = () => {
   const [weatherData, setWeatherData] = useState({});
@@ -56,8 +57,9 @@ const FunctionCalling = () => {
     <main className={styles.main}>
       <div className={styles.container}>
         <div className={styles.column}>
-          <WeatherWidget {...weatherData} />
+          {/* <WeatherWidget {...weatherData} /> */}
           {/* <FileViewer /> */}
+          <CompanyWidget />
         </div>
 
         <div className={styles.chatContainer}>
