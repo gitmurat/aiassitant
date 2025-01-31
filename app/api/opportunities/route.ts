@@ -22,7 +22,7 @@ export async function POST(req) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": process.env.CASSANDRA_API_KEY as string, // Usa variable de entorno
+          "x-api-key": process.env.CASSANDRA_API_KEY as string,
         },
         body: JSON.stringify(params),
       }
