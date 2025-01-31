@@ -8,6 +8,7 @@ import Markdown from "react-markdown";
 // @ts-expect-error - no types for this yet
 import { AssistantStreamEvent } from "openai/resources/beta/assistants/assistants";
 import { RequiredActionFunctionToolCall } from "openai/resources/beta/threads/runs/runs";
+import FetchingLoader from "./fetching-loader";
 
 type MessageProps = {
   role: "user" | "assistant" | "code";
@@ -64,6 +65,7 @@ const Chat = ({
   const [userInput, setUserInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [inputDisabled, setInputDisabled] = useState(false);
+  const [fetching, setFetching] = useState(false);
   const [threadId, setThreadId] = useState("");
 
   // automatically scroll to bottom of chat
@@ -125,10 +127,12 @@ const Chat = ({
         }
       );
 
+      setFetching(false);
       const stream = AssistantStream.fromReadableStream(response.body);
       handleReadableStream(stream);
     } catch (error) {
-      toast.error("Error procesando la datos");
+      setFetching(false);
+      toast.error("Error procesando datos");
     }
   };
 
@@ -186,6 +190,7 @@ const Chat = ({
   ) => {
     const runId = event.data.id;
     const toolCalls = event.data.required_action.submit_tool_outputs.tool_calls;
+    setFetching(true);
     // loop over tool calls and call function handler
     const toolCallOutputs = await Promise.all(
       toolCalls.map(async (toolCall) => {
@@ -267,6 +272,7 @@ const Chat = ({
         {messages.map((msg, index) => (
           <Message key={index} role={msg.role} text={msg.text} />
         ))}
+        {<FetchingLoader fetching={fetching} />}
         <div ref={messagesEndRef} />
       </div>
       <form
@@ -301,12 +307,6 @@ const Chat = ({
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
         theme="dark"
         transition={Bounce}
       />
