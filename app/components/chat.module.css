@@ -29,6 +29,11 @@
   background-color: white;
 }
 
+.chatControls {
+  display: flex;
+  gap: 8px;
+}
+
 .button {
   padding: 8px 24px;
   background-color: #000;
