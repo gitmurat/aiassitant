@@ -57,7 +57,7 @@ const FunctionCalling = () => {
       <div className={styles.container}>
         <div className={styles.column}>
           <WeatherWidget {...weatherData} />
-          <FileViewer />
+          {/* <FileViewer /> */}
         </div>
 
         <div className={styles.chatContainer}>
