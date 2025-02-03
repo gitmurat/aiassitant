@@ -1,5 +1,59 @@
 [
   {
+    "nombre": "GENESIS OPPORTUNITTES MADRID, S.L.",
+    "cif": "B87600011",
+    "contact_name": null,
+    "direccion": "Calle San Enrique 20 Madrid",
+    "email": "info@genesis-fund.co.il",
+    "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGV0TIn5PIPKg/company-logo_200_200/company-logo_200_200/0/1684964713094/genesis_investments_israel_spain_logo?e=2147483647&v=beta&t=A-yFvecyLkReGWJBh496N78MhiaCf71Gx4YUYstbjAA",
+    "linkedin": "https://il.linkedin.com/company/genesis-investments-israel-spain"
+  },
+  {
+    "nombre": "EL CORTE INGLES, S.A.",
+    "cif": "A28017895",
+    "contact_name": null,
+    "direccion": "Hermosilla, 112 Madrid, Madrid 28009, ES",
+    "email": null,
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQGgvfQcivZpnw/company-logo_200_200/company-logo_200_200/0/1631319791315?e=2147483647&v=beta&t=lifzQV_VMjQT6kiSqjAcfnxrdwLXjKq0jzNHccuV46k",
+    "linkedin": "https://es.linkedin.com/company/elcorteingles"
+  },
+  {
+    "nombre": "MUTUA MADRILEÑA AUTOMOVILISTA, SOCIEDAD DE SEGUROS A PRIMA FIJA",
+    "cif": "V28027118",
+    "contact_name": null,
+    "direccion": "Paseo de la Castellana 33 Madrid, 28046, ES",
+    "email": null,
+    "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEpUFyLZjxWQw/company-logo_200_200/company-logo_200_200/0/1630459989913/mutua_madrilena_logo?e=2147483647&v=beta&t=HmQqDWHM3mRAuIB9uEXTXxQ8Rjkxf9areiUQxI1VVz0",
+    "linkedin": "https://es.linkedin.com/company/mutua-madrilena"
+  },
+  {
+    "nombre": "JUYFRA 46, S.L.",
+    "cif": "B81449944",
+    "contact_name": null,
+    "direccion": "CALLE CONDE DE PEÑALVER, 4 - 4 MADRID",
+    "email": null,
+    "logo": "https://media.licdn.com/dms/image/v2/C5103AQEK3imeHIZclw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517432441368?e=2147483647&v=beta&t=g944uc60ErUlaLW8laO8wAeaFtg_t6YJ1daz5gIXBHo",
+    "linkedin": null
+  },
+  {
+    "nombre": "FREMAP",
+    "cif": "G28207017",
+    "contact_name": null,
+    "direccion": "Carretera de Pozuelo 61 Majadahonda, Madrid 28220, ES",
+    "email": null,
+    "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGbsUleCgVB6A/company-logo_200_200/company-logo_200_200/0/1630654843215/fremap_logo?e=2147483647&v=beta&t=Ran_cpQ0QWyzjpLmUU3_WT9vXVjwsQkogo5JCLlRBss",
+    "linkedin": "https://www.linkedin.com/company/fremap"
+  },
+  {
+    "nombre": "ALMATERESA, S.L.(ALMA GRUPO INMOBILIARIO)",
+    "cif": "B05406187",
+    "contact_name": null,
+    "direccion": "C/ Ortega y Gasset, nº 22-24 Planta 5 ª, 28001 Madrid",
+    "email": null,
+    "logo": "https://alma-gi.com/wp-content/uploads/2020/10/logotipo-ALMA-horizontal-02.png",
+    "linkedin": "https://es.linkedin.com/company/alma-gesti%C3%B3n-inmobiliaria"
+  },
+  {
     "nombre": "ARGIS TETUAN, S.L.",
     "cif": "B88390331",
     "contact_name": "Ale Schuvaks",
@@ -9,13 +63,13 @@
     "linkedin": "https://www.linkedin.com/in/aleschuvaks?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRP9lALkeSSWP1jgSF0pEMg%3D%3D"
   },
   {
-    "nombre": "GENESIS OPPORTUNITTES MADRID, S.L.",
-    "cif": "B87600011",
+    "nombre": "SHEVAT INVESTMENTS, S.L.",
+    "cif": "B64558653",
     "contact_name": null,
-    "direccion": "Calle San Enrique 20 Madrid",
-    "email": "info@genesis-fund.co.il",
-    "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGV0TIn5PIPKg/company-logo_200_200/company-logo_200_200/0/1684964713094/genesis_investments_israel_spain_logo?e=2147483647&v=beta&t=A-yFvecyLkReGWJBh496N78MhiaCf71Gx4YUYstbjAA",
-    "linkedin": "https://il.linkedin.com/company/genesis-investments-israel-spain"
+    "direccion": "C/ de Lleó XIII, Nº 7, 08022 Barcelona",
+    "email": null,
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQG3GtQYHSFu2g/company-logo_200_200/company-logo_200_200/0/1630639756894/shevat_investments_sl_logo?e=2147483647&v=beta&t=yoGafTElDe7tTB3u1b3QZ2dF4dzPFFccNuQqwhpt494",
+    "linkedin": "https://es.linkedin.com/company/shevat-investments-sl"
   },
   {
     "nombre": "PRIVADO",
@@ -29,60 +83,6 @@
   {
     "nombre": "TECU INVESTMENTS 2018, S.L.U. (AXA REAL ESTATE)",
     "cif": "B88049473",
-    "contact_name": null,
-    "direccion": null,
-    "email": null,
-    "logo": null,
-    "linkedin": null
-  },
-  {
-    "nombre": "EL CORTE INGLES, S.A.",
-    "cif": "A28017895",
-    "contact_name": null,
-    "direccion": null,
-    "email": null,
-    "logo": null,
-    "linkedin": null
-  },
-  {
-    "nombre": "MUTUA MADRILEÑA AUTOMOVILISTA, SOCIEDAD DE SEGUROS A PRIMA FIJA",
-    "cif": "V28027118",
-    "contact_name": null,
-    "direccion": null,
-    "email": null,
-    "logo": null,
-    "linkedin": null
-  },
-  {
-    "nombre": "JUYFRA 46, S.L.",
-    "cif": "B81449944",
-    "contact_name": null,
-    "direccion": null,
-    "email": null,
-    "logo": null,
-    "linkedin": null
-  },
-  {
-    "nombre": "FREMAP",
-    "cif": "G28207017",
-    "contact_name": null,
-    "direccion": null,
-    "email": null,
-    "logo": null,
-    "linkedin": null
-  },
-  {
-    "nombre": "ALMATERESA, S.L.(ALMA GRUPO INMOBILIARIO)",
-    "cif": "B05406187",
-    "contact_name": null,
-    "direccion": null,
-    "email": null,
-    "logo": null,
-    "linkedin": null
-  },
-  {
-    "nombre": "SHEVAT INVESTMENTS, S.L.",
-    "cif": "B64558653",
     "contact_name": null,
     "direccion": null,
     "email": null,
