@@ -5,22 +5,37 @@ import styles from "./page.module.css";
 import Chat from "../../components/chat";
 import WeatherWidget from "../../components/weather-widget";
 import { getWeather } from "../../utils/weather";
+import { getCompanies } from "@/app/utils/companies";
 import { fetchOpportunities } from "../../utils/opportunities";
 import FileViewer from "../../components/file-viewer";
 import CompanyWidget from "@/app/components/company-widget";
 
 const FunctionCalling = () => {
   const [weatherData, setWeatherData] = useState({});
+  const [companiesData, setCompaniesData] = useState([]);
+
+  const clearStates = () => {
+    // setWeatherData({});
+    setCompaniesData([]);
+  }
 
   const functionCallHandler = async (call) => {
     if (!call?.function?.name)
       return JSON.stringify({ error: "No function name provided" });
-
+    clearStates();
     const args = JSON.parse(call.function.arguments);
 
     if (call.function.name === "get_weather") {
       const data = getWeather(args.location);
       setWeatherData(data);
+      return JSON.stringify(data);
+    }
+
+    if (call.function.name === "get_companies") {
+      const data = await getCompanies();
+      console.log("companies", data);
+      
+      setCompaniesData(data);
       return JSON.stringify(data);
     }
 
@@ -56,11 +71,11 @@ const FunctionCalling = () => {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <div className={styles.column}>
+        {companiesData.length > 0 && <div className={styles.column}>
           {/* <WeatherWidget {...weatherData} /> */}
           {/* <FileViewer /> */}
-          <CompanyWidget />
-        </div>
+          <CompanyWidget companies={companiesData} />
+        </div>}
 
         <div className={styles.chatContainer}>
           <div className={styles.chat}>
