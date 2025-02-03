@@ -34,7 +34,7 @@ const FunctionCalling = () => {
     if (call.function.name === "get_companies") {
       const data = await getCompanies();
       console.log("companies", data);
-      
+      // @ts-ignore
       setCompaniesData(data);
       return JSON.stringify(data);
     }
