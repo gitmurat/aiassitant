@@ -1,4 +1,7 @@
+export const runtime = 'edge';
+
 import { openai } from "@/app/openai";
+
 
 // download file by file ID
 export async function GET(_request, { params: { fileId } }) {

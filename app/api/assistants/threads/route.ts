@@ -1,6 +1,8 @@
 import { openai } from "@/app/openai";
 
-export const runtime = "nodejs";
+// export const runtime = "nodejs";
+export const runtime = 'edge';
+
 
 // Create a new thread
 export async function POST() {

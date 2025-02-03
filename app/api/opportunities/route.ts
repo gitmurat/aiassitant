@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
@@ -40,6 +42,7 @@ export async function POST(req) {
         { status: 200 }
       );
     } else {
+      return NextResponse.json(data.slice(0, 4), { status: 200 });
       return NextResponse.json(data, { status: 200 });
     }
   } catch (error) {

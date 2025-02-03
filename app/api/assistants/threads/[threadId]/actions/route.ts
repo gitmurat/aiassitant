@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { openai } from "@/app/openai";
 
 // Send a new message to a thread
