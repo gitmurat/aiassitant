@@ -1,9 +1,7 @@
-export const runtime = 'edge';
-
 import { assistantId } from "@/app/assistant-config";
 import { openai } from "@/app/openai";
 
-// export const runtime = "nodejs";
+export const runtime = "nodejs";
 
 // Send a new message to a thread
 export async function POST(request, { params: { threadId } }) {

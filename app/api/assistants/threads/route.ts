@@ -1,7 +1,6 @@
 import { openai } from "@/app/openai";
 
-// export const runtime = "nodejs";
-export const runtime = 'edge';
+export const runtime = "nodejs";
 
 
 // Create a new thread

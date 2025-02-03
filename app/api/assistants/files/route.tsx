@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 import { assistantId } from "@/app/assistant-config";
 import { openai } from "@/app/openai";
 

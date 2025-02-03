@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 import { openai } from "@/app/openai";
 
 
