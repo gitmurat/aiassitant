@@ -1,71 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./company-widget.module.css";
 
-const CompanyWidget = ({
-  companies = [
-    {
-      name: "Capture",
-      location: "Madrid dentro M30, Otras localizaciones",
-      linkedin:
-        "https://www.google.com/url?sa=D&q=https://www.linkedin.com/pub/dir/%2B/Andueza%2Bretegui&ust=1738424160000000&usg=AOvVaw1Aerjg4MArtWDIdXWKd6PF&hl=es&source=gmail",
-      logo: "https://www.capture.se/Portals/0/capture_logo.png?ver=I709_EhG7WDdMhNmjSvDxg%3d%3d",
-      contactName: "Andueza Retegui",
-      contactEmail: "andueza@merkel.com",
-    },
-    {
-      name: "INMOBIC OCIOPIA SL",
-      location: null,
-      linkedin:
-        "https://es.linkedin.com/in/mariano-garc%C3%ADa-sarriguren-a7b566172",
-      logo: "https://ociopia.es/wp-content/uploads/2023/10/Logo-Ociopia.webp",
-      contactName: "Andueza Retegui",
-      contactEmail: "andueza@merkel.com",
-    },
-    {
-      name: "INMOBIC OCIOPIA SL",
-      location: null,
-      linkedin:
-        "https://es.linkedin.com/in/mariano-garc%C3%ADa-sarriguren-a7b566172",
-      logo: "https://ociopia.es/wp-content/uploads/2023/10/Logo-Ociopia.webp",
-      contactName: "Andueza Retegui",
-      contactEmail: "andueza@merkel.com",
-    },
-    {
-      name: "INMOBIC OCIOPIA SL",
-      location: null,
-      linkedin:
-        "https://es.linkedin.com/in/mariano-garc%C3%ADa-sarriguren-a7b566172",
-      logo: "https://ociopia.es/wp-content/uploads/2023/10/Logo-Ociopia.webp",
-      contactName: "Andueza Retegui",
-      contactEmail: "andueza@merkel.com",
-    },
-    {
-      name: "INMOBIC OCIOPIA SL",
-      location: null,
-      linkedin:
-        "https://es.linkedin.com/in/mariano-garc%C3%ADa-sarriguren-a7b566172",
-      logo: "https://ociopia.es/wp-content/uploads/2023/10/Logo-Ociopia.webp",
-      contactName: "Andueza Retegui",
-      contactEmail: "andueza@merkel.com",
-    },
-  ],
-}) => {
+const CompanyWidget = ({ companies = [] }) => {
+  // const [show, setShow] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [viewJson, setViewJson] = useState(false);
+  const show = companies.length > 0;
+
+  // useEffect(() => {
+  //   console.log("companies", companies);
+
+  //   if (companies.length > 0) {
+  //     setShow(true);
+  //   } else {
+  //     setTimeout(() => setShow(false), 300);
+  //   }
+  // }, [companies]);
 
   const filteredCompanies = companies.filter((company) =>
-    company.name.toLowerCase().includes(searchQuery.toLowerCase())
+    company.nombre.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const downloadCSV = () => {
     const csvContent = [
       ["Name", "Logo", "LinkedIn", "Location", "Contact Name", "Contact Email"],
       ...companies.map((company) => [
-        company.name,
+        company.nombre,
         company.logo,
         company.linkedin,
-        company.location,
-        company.contactName,
+        company.direccion,
+        company.contact_name,
         company.contactEmail,
       ]),
     ]
@@ -83,7 +47,11 @@ const CompanyWidget = ({
   };
 
   return (
-    <div className={styles.companyWidget}>
+    <div
+      className={`${styles.companyWidget} ${
+        show ? styles.fadeIn : styles.fadeOut
+      }`}
+    >
       <div className={`${styles.inputForm} ${styles.clearfix}`}>
         <input
           type="text"
@@ -116,23 +84,23 @@ const CompanyWidget = ({
             <div key={index} className={styles.companyCard}>
               <div className={styles.companyCardHeader}>
                 <img
-                  src={company.logo || "placeholder.png"}
-                  alt={company.name || "No Logo"}
+                  src={company.logo || "/placeholder.jpg"}
+                  alt={company.nombre || "No Logo"}
                   className={styles.companyLogo}
                 />
-                <h2>{company.name || "No Company Selected"}</h2>
+                <h2>{company.nombre || "No Company Selected"}</h2>
               </div>
               <p className={styles.attribute}>
                 <img className={styles.icon} src="/location.svg" />{" "}
-                {company.location || "N/A"}
+                {company.direccion || "N/A"}
               </p>
               <p className={styles.attribute}>
                 <img className={styles.icon} src="/contact.svg" />{" "}
-                {company.contactName || "N/A"}
+                {company.contact_name || "N/A"}
               </p>
               <p className={styles.attribute}>
                 <img className={styles.icon} src="/email.svg" />{" "}
-                {company.contactEmail || "N/A"}
+                {company.email || "N/A"}
               </p>
               <a
                 href={company.linkedin || "#"}
