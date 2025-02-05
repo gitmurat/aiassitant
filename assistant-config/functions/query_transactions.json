@@ -29,6 +29,14 @@
           "type": "string",
           "description": "Transactions dated on or before the specified date."
         },
+        "maximumvalue": {
+          "type": "integer",
+          "description": "Transactions where final_price is less than specified value."
+        },
+        "minimumvalue": {
+          "type": "integer",
+          "description": "Transactions where final_price greater than specified value."
+        },
         "district": {
           "type": "string",
           "description": "District where the transaction took place."

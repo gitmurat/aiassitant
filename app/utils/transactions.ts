@@ -14,7 +14,11 @@ export async function fetchTransactions(params) {
       "neighborhood",
       "seller",
       "transactiontype",
+      "minimumvalue",
+      "maximumvalue"
     ];
+
+    console.log("PARAMS", params);
 
     optionalParams.forEach((param) => {
       const values = params[param];
