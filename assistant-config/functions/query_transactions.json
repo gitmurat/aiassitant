@@ -1,0 +1,53 @@
+{
+    "name": "query_transacciones",
+    "description": "Executes an SQL query on the transactions table ('afflux_transacciones_mv').",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "q": {
+          "type": "string",
+          "description": "The SQL query to be executed."
+        },
+        "afterdate": {
+          "type": "string",
+          "description": "Transactions dated on or after the specified date."
+        },
+        "assettype": {
+          "type": "string",
+          "description": "One or more asset types separated by '|'."
+        },
+        "beforedate": {
+          "type": "string",
+          "description": "Transactions dated on or before the specified date."
+        },
+        "buyer": {
+          "type": "string",
+          "description": "One or more buyers separated by '|'."
+        },
+        "district": {
+          "type": "string",
+          "description": "District where the transaction took place."
+        },
+        "m30": {
+          "type": "integer",
+          "description": "M30 value related to the transaction."
+        },
+        "municipality": {
+          "type": "string",
+          "description": "Municipality where the transaction took place."
+        },
+        "neighborhood": {
+          "type": "string",
+          "description": "Neighborhood where the transaction took place."
+        },
+        "seller": {
+          "type": "string",
+          "description": "One or more sellers separated by '|'."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+  
