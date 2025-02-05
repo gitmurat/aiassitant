@@ -1,6 +1,6 @@
 export async function humanQueryToSQL({ humanQuery }: { humanQuery: string }) {
   const systemMessage = `
-    Given the following schema, write a SQL query that retrieves the requested information. Select relevant columns ONLY. Make sure to use the correct name of the columns, including prefix "TRANSACCIONES." when neccessary. Avoid adding a ";" to the end of the SQL query. Current year is 2025.
+    Given the following schema, write a SQL query that retrieves the requested information. Select relevant columns **only**. Ensure that column names are **used exactly** as defined in the schema, without modifications or assumptions. Avoid adding a ";" to the end of the SQL query. Current year is 2025.
     If the user requests information about buildings without specifying a specific type of building, do not apply a filter on "asset_type".
     Return the SQL query inside a JSON structure with the key "sql_query".
     <schema>
