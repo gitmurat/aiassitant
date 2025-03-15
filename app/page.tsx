@@ -1,30 +1,8 @@
-"use client";
-
-import React from "react";
-import styles from "./page.module.css";
-
-const Home = () => {
-  const categories = {
-    "Basic chat": "basic-chat",
-    "Function calling": "function-calling",
-    "File search": "file-search",
-    All: "all",
-  };
-
+export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.title}>
-        Explore sample apps built with Assistants API
-      </div>
-      <div className={styles.container}>
-        {Object.entries(categories).map(([name, url]) => (
-          <a key={name} className={styles.category} href={`/examples/${url}`}>
-            {name}
-          </a>
-        ))}
-      </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-gray-900 text-white">
+      <h1 className="text-4xl font-bold mb-4">🚀 AlphaGPT Trading Assistant 🚀</h1>
+      <p className="text-lg">Your all-in-one, powerful trading dashboard.</p>
     </main>
   );
-};
-
-export default Home;
+}
